@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var pnum = 1;
+        function MovePrev(){
+            pnum--;
+            if(pnum <= 0)
+                {pnum = 5}
+                
+            document.getElementById("img_view").src="png/picture0"+pnum.toString()+".png";            
+        }            
+        
+        function MoveNext(){
+            pnum++;
+            if(pnum >= 6)
+                {pnum=1}
+            
+            document.getElementById("img_view").src="png/picture0"+pnum.toString()+".png";
+        }
+    </script>
+    <div>
+        <center>
+            <button type="button" onclick="MovePrev()">이전</button>
+            <button type="button" onclick="MoveNext()">다음</button>
+            
+            <br/><br/>
+            <img id="img_view" src="png/picture01.png" width="300" height="300">
+        </center>
+    </div>
+</body>
+</html>
