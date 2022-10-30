@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        #myCanvas{
+
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+
+ <body>
+
+
+    <canvas id="myCanvas" width="300" height="300"></canvas>
+
+
+
+    <script>
+
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext('2d');
+    var clicked = false;
+      
+
+    
+function over(e){
+  
+    if(e.offsetX <=100 && e.offsetX >=200
+    && e.offsetY <=100 && e.offsetY>=200)
+    {
+      fill2();
+      
+    }
+    else {
+      fill3();
+    }
+  
+  }
+
+  function up(e){
+    const x= e.clientX;
+    const y = e.clientY;
+             
+                  fill4();
+                 
+
+              
+  
+}
+function down(e){
+  const x= e.clientX;
+    const y = e.clientY;
+              
+      
+        
+        fill();
+        
+      
+    
+  }
+if(canvas){
+  fill2();
+  canvas.addEventListener("mousedown",down);
+  canvas.addEventListener("mouseup",up);
+  canvas.addEventListener("mouseover",over);
+  canvas.addEventListener("mouseleave",fill2);
+}
+
+
+
+
+
+    
+
+
+
+
+  function fill() {
+    ctx.fillStyle = 'blue';
+    ctx.fillRect(100, 100, 100, 100);
+  }
+  function fill2() {
+    ctx.fillStyle = 'red';
+    ctx.fillRect(100, 100, 100, 100);
+  }
+  function fill3() {
+    ctx.fillStyle = 'green';
+    ctx.fillRect(100, 100, 100, 100);
+  }
+  function fill4() {
+    ctx.fillStyle = 'black';
+    ctx.fillRect(100, 100, 100, 100);
+  }
+
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>
